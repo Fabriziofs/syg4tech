@@ -1,3 +1,5 @@
+<?php include("db.php") ?>
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -37,6 +39,7 @@
             height="25px"
           />
           </a>
+
           <img
             class="menu-icon"
             onclick="menuToggle()"
@@ -45,24 +48,39 @@
             height="25px"
           />
         </div>
+
+    <!-- account page  -->
+
+    <div class="account-page">
+      <div class="container">
         <div class="row">
           <div class="col-2">
-            <h1>
-              Give Your Setup <br />
-              A New Style!
-            </h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-              nulla
-              <br />
-              eaque repellendus sit recusandae adipisci voluptas ut similique
-              sunt.
-            </p>
-            <a href="" class="btn">Explore Now &#8594;</a>
+            <img src="./assets/main-picture.png" alt="" width="100%" />
           </div>
           <div class="col-2">
-            <img src="./assets/main-picture.png" alt="" />
+            <div class="form-container">
+              <div class="form-btn">
+                <span onclick="login()">Login</span>
+                <span onclick="register()">Register</span>
+                <hr id="indicator" />
+              </div>
+              <form action="" id="loginForm">
+                <input type="text" placeholder="Username" />
+                <input type="password" placeholder="Password" />
+                <input type="submit" class="btn" value="Login" />
+                <a href="">Forgot Password</a>
+              </form>
+              <form action="" id="registerForm">
+                <input type="text" placeholder="Username" />
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <input type="submit" class="btn" value="Register" />
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- footer -->
+<?php include("./includes/footer.php")?>

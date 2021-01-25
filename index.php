@@ -13,12 +13,15 @@ $query = "SELECT * FROM `Product`";
       <div class="small-container">
         <div class="row">
           <div class="col-3">
+            <h2> Portátiles</h2>
             <img src="./assets/category-img/category-1.png" alt="category-1" />
           </div>
           <div class="col-3">
+            <h2>Periféricos</h2>
             <img src="./assets/category-img/category-2.png" alt="category-2" />
           </div>
           <div class="col-3">
+            <h2>Componentes</h2>
             <img src="./assets/category-img/category-3.png" alt="category-3" />
           </div>
         </div>
@@ -31,11 +34,14 @@ $query = "SELECT * FROM `Product`";
       <h2 class="title">Newer Products</h2>
       <div class="row">
 <?php foreach($product_list as $product){ ?>
-        <div class="col-4">
+        <div class="col-4">  
+          <a href="<?php echo './single-product.php?id='.$product['id'] ?>">
           <img
             src="<?php echo $product['image']; ?>"
             alt="product-1"
           />
+          </a>
+        
           <h4><?php echo $product['name']; ?></h4>
           <p><?php echo $product['price']; ?>€</p>
         </div>
