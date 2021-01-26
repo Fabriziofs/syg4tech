@@ -45,24 +45,5 @@
             height="25px"
           />
         </div>
-        <div class="row">
-          <div class="col-2">
-            <h1>
-              Give Your Setup <br />
-              A New Style!
-            </h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-              nulla
-              <br />
-              eaque repellendus sit recusandae adipisci voluptas ut similique
-              sunt.
-            </p>
-            <a href="" class="btn">Explore Now &#8594;</a>
-          </div>
-          <div class="col-2">
-            <img src="./assets/main-picture.png" alt="" />
-          </div>
-        </div>
       </div>
     </div>
