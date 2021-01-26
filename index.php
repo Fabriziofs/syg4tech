@@ -31,8 +31,6 @@ $query = "SELECT * FROM `Product`";
   </div>
 </main>
 
-
-
     <!-- Feature categories -->
 
     <div class="categories">

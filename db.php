@@ -6,7 +6,3 @@ $connection = mysqli_connect(
   'syg4techDB'
 );
 ?>
-
-
-
-
