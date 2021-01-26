@@ -1,0 +1,4 @@
+Convenciones para los nombres:
+	-Las TABLAS empizan con mayús y en inglés ej: Product, User
+	-Las COLUMNAS utiliza lowerCamelCase ej: lastName, firstName(menos las claves primarias que simplemente será en minúscula ej: id) 
+	-Las LLAVES FORÁNEAS utiliza sneak_case ej: product_id, user_id
