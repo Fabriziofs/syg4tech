@@ -100,8 +100,12 @@ main {
   flex: 30%;
   min-width: 250px;
   margin-bottom: 30px;
+  margin-right: 5px;
 }
 
+.col-3 h2 {
+  text-align: center;
+}
 .col-3 img {
   width: 100%;
 }

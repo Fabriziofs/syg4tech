@@ -1,3 +1,4 @@
+<?php include("./global/db.php")?>
 <?php include("./includes/header.php")?>
 
     <!-- car items details -->
