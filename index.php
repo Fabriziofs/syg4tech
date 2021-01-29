@@ -1,13 +1,15 @@
-<?php include("./global/db.php")?>
-<?php include("./includes/header.php")?>
+<?php
+include("./global/db.php");
+include("./includes/header.php");
+?>
 
 <main>
   <div class="container">
     <div class="row">
       <div class="col-2">
         <h1>
-          Give Your Setup <br />
-          A New Style!
+          Dale a tu Setup <br />
+          un nuevo estilo!
         </h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
@@ -16,7 +18,7 @@
           eaque repellendus sit recusandae adipisci voluptas ut similique
           sunt.
         </p>
-        <a href="" class="btn">Explore Now &#8594;</a>
+        <a href="" class="btn">Explorar ahora &#8594;</a>
       </div>
       <div class="col-2">
         <img src="./assets/main-picture.png" alt="" />
@@ -53,7 +55,7 @@ $query = "SELECT * FROM `Product`";
 
     <!-- Newer products -->
     <div class="small-container">
-      <h2 class="title">Newer Products</h2>
+      <h2 class="title">Productos nuevos</h2>
       <div class="row">
 <?php foreach($product_list as $product){ ?>
         <div class="col-4">  
@@ -72,7 +74,7 @@ $query = "SELECT * FROM `Product`";
 
     <!-- Most watched products -->
     <div class="small-container">
-      <h2 class="title">Most Watched</h2>
+      <h2 class="title">Más vistos</h2>
       <div class="row">
 <?php foreach($product_list as $product){ ?>
         <div class="col-4">

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -29,7 +30,7 @@
               <li><a href="./account.php">Account</a></li>
             </ul>
           </nav>
-          <a href="./car.php">
+          <a href="./show-cart.php">
           <img
             src="./assets/shopping-cart.png"
             alt="shopping-cart-icon"

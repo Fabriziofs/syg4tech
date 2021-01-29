@@ -253,6 +253,8 @@ h4 {
 
 .single-product {
   margin-top: 60px;
+  margin-bottom: 60px;
+  min-height: 613px;
 }
 
 .single-product .col-2 img {
