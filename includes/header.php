@@ -17,12 +17,15 @@
       <div class="container">
         <div class="navbar">
           <div class="logo">
-            <img
+          <a href="./index.php">
+          <img
               src="./assets/logo.png"
               alt="logo-icon"
               width="50px"
               height="30px"
             />
+          </a>
+            
           </div>
           <nav>
             <ul id="menuItems">

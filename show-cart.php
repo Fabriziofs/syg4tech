@@ -1,23 +1,27 @@
 <?php include("./includes/header.php")?>
   <!-- car items details -->
     <div class="small-container cart-page">
+    <?php if(!empty($_SESSION['SHOP_CART'])){ ?>
+    
       <table>
         <tr>
           <th>Producto</th>
           <th>Cantidad</th>
           <th>Subtotal</th>
         </tr>
+        <?php $total=0; ?>
+        <?php foreach($_SESSION['SHOP_CART'] as $index=>$product){?>
         <tr>
           <td>
             <!-- Detalles producto -->
             <div class="cart-info">
               <img
-                src="./assets/products-img/1193-asus-prime-b550m-a.jpg"
+                src="<?php echo $product['image']?>"
                 alt=""
               />
               <div>
-                <p>Asus prime b550m</p>
-                <small>Precio: 50.00€</small>
+                <p><?php echo $product['name']?></p>
+                <small>Precio: <?php echo $product['price']?>€</small>
                 <br />
                 <a href="">Remove</a>
               </div>
@@ -26,25 +30,31 @@
           </td>
           <td>
             <!-- cantidad del producto -->
-            <input type="numer" value="1" />
+            <input type="number" value="<?php echo $product['quantity']?>" />
             <!-- fin cantidad del producto -->
           </td>
           <td>
             <!-- precio * cantidad producto -->
-            50.00€
+            <?php echo number_format($product['price'] * $product['quantity'],2);?>€
             <!--  fin precio * cantidad producto -->
           </td>
         </tr>
+        <?php $total=$total+($product['price'] * $product['quantity']); ?>
+        <?php } ?>
       </table>
 
       <div class="total-price">
         <table>
           <tr>
             <td>Total</td>
-            <td>200.00€</td>
+            <td><?php echo number_format($total,2);?>€</td>
           </tr>
         </table>
       </div>
+      <?php } else {?>
+        <h2>No hay nada en el carrito por el momento...</h2>
+        <?php print_r($_SESSION); ?> 
+        <?php } ?>
     </div>
 
 <!-- footer -->

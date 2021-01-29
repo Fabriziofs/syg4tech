@@ -26,15 +26,14 @@ $product = mysqli_fetch_assoc($query_response);
             <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt($product['id'],COD,KEY);?>" />
             <input type="hidden" name="name" id="name" value="<?php echo openssl_encrypt($product['name'],COD,KEY); ?>" />
             <input type="hidden" name="price" id="price" value="<?php echo openssl_encrypt($product['price'],COD,KEY); ?>" />
-            <input type="number" name="quantity" id="quantity" value="<?php echo openssl_encrypt(1,COD,KEY); ?>" />
+            <input type="hidden" name="quantity" id="quantity" value="<?php echo openssl_encrypt(1,COD,KEY); ?>" />
+            <input type="hidden" name="image" id="image" value="<?php echo openssl_encrypt($product['image'],COD,KEY);?>" />
             <button type="submit" name="btnAccion" value="addToCart" class="btn">Add to cart</button>
           </form>
 
           <h3>Detalles del producto:</h3>
           <p>
           <?php echo $product['description']; ?>
-          <hr>
-          <?php echo $message ?>
           </p>
         </div>
       </div>
