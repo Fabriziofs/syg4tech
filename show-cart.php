@@ -1,8 +1,11 @@
-<?php include("./includes/header.php")?>
+<?php
+include("./includes/header.php");
+include("./global/config.php");
+include("./cart.php");
+?>
   <!-- car items details -->
     <div class="small-container cart-page">
     <?php if(!empty($_SESSION['SHOP_CART'])){ ?>
-    
       <table>
         <tr>
           <th>Producto</th>
@@ -17,13 +20,16 @@
             <div class="cart-info">
               <img
                 src="<?php echo $product['image']?>"
-                alt=""
+                alt="product-image"
               />
               <div>
                 <p><?php echo $product['name']?></p>
                 <small>Precio: <?php echo $product['price']?>€</small>
                 <br />
-                <a href="">Remove</a>
+                <form action="" method="POST">
+                <input type="hidden" name="id"  value="<?php echo openssl_encrypt($product['id'],COD,KEY);?>" />
+                <button type="submit" name="btnAccion" value="deleteFromCart">Eliminar</button>
+                </form>
               </div>
             </div>
             <!-- fin detalles producto  -->

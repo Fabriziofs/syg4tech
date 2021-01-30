@@ -1,6 +1,5 @@
 <?php 
 include("./global/config.php");
-
 session_start();
 
 if(isset($_POST['btnAccion'])){
@@ -8,6 +7,7 @@ if(isset($_POST['btnAccion'])){
   switch($_POST['btnAccion']){
 
     case 'addToCart':
+      $message = "Estoy dentro del case de añadir";
       if(is_numeric(openssl_decrypt($_POST['id'], COD, KEY))){
         $id_decrypted = openssl_decrypt($_POST['id'], COD, KEY);
         $message_id = "Ok ID correcto ".$id_decrypted;
@@ -68,8 +68,21 @@ if(isset($_POST['btnAccion'])){
         );
         $_SESSION['SHOP_CART'][$numberOfProducts] = $product;
       }
+      break;
 
-    break;
+    case 'deleteFromCart':
+      if(is_numeric(openssl_decrypt($_POST['id'], COD, KEY))){
+        $id_decrypted = openssl_decrypt($_POST['id'], COD, KEY);
+        foreach($_SESSION['SHOP_CART'] as $index=>$product){
+          if($product['id']==$id_decrypted){
+            unset($_SESSION['SHOP_CART'][$index]);
+          }
+        }
+      }
+      else{
+        $message_id = "Upss.. ID incorrecto ".$id_decrypted;
+      }
+      break;
   }
 }
 ?>
