@@ -36,7 +36,7 @@ include("./cart.php");
           </td>
           <td>
             <!-- cantidad del producto -->
-            <input type="number" value="<?php echo $product['quantity']?>" />
+            <p><?php echo $product['quantity']?></p> 
             <!-- fin cantidad del producto -->
           </td>
           <td>
