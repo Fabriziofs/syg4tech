@@ -31,8 +31,8 @@ if(isset($_POST['btnAccion'])){
       else{
         $message_price = "Upss.. precio incorrecto ".$price_decrypted;
       }
-      if(is_numeric(openssl_decrypt($_POST['quantity'], COD, KEY))){
-        $quantity_decrypted = openssl_decrypt($_POST['quantity'], COD, KEY);
+      if(is_numeric($_POST['quantity'])){
+        $quantity_decrypted = $_POST['quantity'];
         $quantity_price = "Ok cantidad correcta ".$quantity_decrypted;
       }
       else{

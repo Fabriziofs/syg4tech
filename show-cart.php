@@ -59,7 +59,6 @@ include("./cart.php");
       </div>
       <?php } else {?>
         <h2>No hay nada en el carrito por el momento...</h2>
-        <?php print_r($_SESSION); ?> 
         <?php } ?>
     </div>
 

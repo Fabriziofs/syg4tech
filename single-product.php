@@ -18,16 +18,16 @@ $product = mysqli_fetch_assoc($query_response);
         <img src="<?php echo $product['image']; ?>" alt="" />
         </div>
         <div class="col-2">
-          <p>Home/<?php echo $product['name']; ?></p>
+          <p> <a href="./index.php">Home</a>/<?php echo $product['name']; ?></p>
           <h1><?php echo $product['name']; ?></h1>
           <h4><?php echo $product['price']; ?>€</h4>
 
-          <form action="" method="POST">
-            <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt($product['id'],COD,KEY);?>" />
-            <input type="hidden" name="name" id="name" value="<?php echo openssl_encrypt($product['name'],COD,KEY); ?>" />
-            <input type="hidden" name="price" id="price" value="<?php echo openssl_encrypt($product['price'],COD,KEY); ?>" />
-            <input type="hidden" name="quantity" id="quantity" value="<?php echo openssl_encrypt(1,COD,KEY); ?>" />
-            <input type="hidden" name="image" id="image" value="<?php echo openssl_encrypt($product['image'],COD,KEY);?>" />
+          <form method="POST">
+            <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt($product['id'],COD,KEY); ?>" />
+            <input type="hidden" name="name" id="name" value="<?php echo openssl_encrypt($product['name'],COD,KEY);  ?>" />
+            <input type="hidden" name="price" id="price" value="<?php echo openssl_encrypt($product['price'],COD,KEY);  ?>" />
+            <input type="number" name="quantity" id="quantity" value="1"/>
+            <input type="hidden" name="image" id="image" value="<?php echo openssl_encrypt($product['image'],COD,KEY); ?>" />
             <button type="submit" name="btnAccion" value="addToCart" class="btn">Add to cart</button>
           </form>
 
