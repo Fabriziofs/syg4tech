@@ -4,10 +4,17 @@ include("./global/config.php");
 include("./includes/header.php");
 include("./cart.php");
 
-$product_id = $_GET['id'];
-$query = "SELECT * FROM `Product` WHERE id=$product_id";
-$query_response = mysqli_query($connection, $query);
-$product = mysqli_fetch_assoc($query_response);
+if(isset($_GET['id'])){
+  $product_id = $_GET['id'];
+  $query = "SELECT * FROM `Product` WHERE id=$product_id";
+  $query_response = mysqli_query($connection, $query);
+  $product = mysqli_fetch_assoc($query_response);
+}
+else{
+  // Redireccionar a index.php si no se ha pasado una id por el metodo GET.
+  header("Location: ./index.php");
+}
+
 ?>
 
 <!-- single product details -->
