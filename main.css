@@ -414,6 +414,7 @@ form .btn:focus {
 }
 #registerForm {
   left: 0;
+  top: 60px;
 }
 
 form a {
