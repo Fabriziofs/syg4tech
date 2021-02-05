@@ -40,7 +40,9 @@ $query = "SELECT * FROM `Category`";
 <?php foreach($category_list as $category){ ?>
           <div class="col-3">
             <h2><?php echo $category['name']; ?></h2>
+            <a href="<?php echo './category.php?id='.$category['id']; ?>">
             <img src="<?php echo $category['image']; ?>" alt="category-<?php echo $category['id']; ?>" />
+            </a>
           </div>
 <?php } ?>
         </div>
