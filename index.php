@@ -103,7 +103,7 @@ $query = "SELECT * FROM `Product`";
           </div>
           <div class="col-5">
             <img
-              src="./assets/brands-logos/ryzen-logo.jpg"
+              src="./assets/brands-logos/ryzen-logo.png"
               alt="ryzen-logo"
             />
           </div>

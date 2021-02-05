@@ -14,19 +14,10 @@ else{
 
 ?>
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página del admin</title>
-</head>
-<body>
-  <h1>PÁGINA SOLO DEL ADMIN</h1>
   <form action="account.php" method="POST">
   <input type="hidden" name="logout" />
-    <input type="submit"/>
+  <button type="submit"class="btn">Cerrar sesión</button>
   </form>
-</body>
-</html>
+
+<!-- footer -->
+<?php include("./includes/footer.php"); ?>

@@ -1,5 +1,6 @@
 <?php 
 include("./global/db.php");
+include("./global/config.php");
 include("./includes/header.php");
 
 if(isset($_POST['logout'])){
@@ -26,14 +27,13 @@ if(isset($_SESSION['role'])){
 if(isset($_POST['Login'])){
   if(isset($_POST['username']) && isset($_POST['password'])){
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $password = openssl_encrypt($_POST['password'],COD,KEY);
   
     $query = "SELECT * FROM `User` WHERE username='$username' AND password='$password'";
     $query_response = mysqli_query($connection, $query);
     $user = mysqli_fetch_array($query_response, MYSQLI_ASSOC);
   
     if($user){
-      // print_r($user['role_id']);
       $_SESSION['role'] = $user['role_id'];
       
       switch ($_SESSION['role']) {
@@ -51,7 +51,7 @@ if(isset($_POST['Login'])){
       }
     }
     else{
-      echo "Usuario o contraseña incorrectos";
+      echo "Usuario o contraseña incorrectos.";
     }
   }
 }
@@ -62,8 +62,9 @@ elseif(isset($_POST['Register'])){
     'lastname' => $_POST['lastname'], 
     'username' => $_POST['username'],
     'email' => $_POST['email'],
-    'password' => $_POST['password']
+    'password' => openssl_encrypt($_POST['password'],COD,KEY)
   );
+
   if(count($userdata) == 5){
     $query = "INSERT INTO `User` (`id`, `firstName`, `lastName`, `username`, `email`, `password`, `role_id`, `address_id`)
               VALUES (NULL,'{$userdata['firstname']}', '{$userdata['lastname']}', '{$userdata['username']}', '{$userdata['email']}', '{$userdata['password']}', '1', NULL)";
@@ -75,10 +76,7 @@ elseif(isset($_POST['Register'])){
   else{
     print_r('Te falta algun dato.');
   }
-
-
 }
-
 ?>
 
     <!-- account page  -->

@@ -69,6 +69,7 @@ if(isset($_POST['btnAccion'])){
           $_SESSION['SHOP_CART'][$numberOfProducts] = $product;
         }
       }
+      print_r('Producto agregado a la cesta.');
       break;
 
     case 'deleteFromCart':
