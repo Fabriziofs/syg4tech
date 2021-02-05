@@ -430,3 +430,7 @@ form a {
   transform: translateX(100px);
   transition: transform 1s;
 }
+
+section {
+  margin: 20px;
+}
