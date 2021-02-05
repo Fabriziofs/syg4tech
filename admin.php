@@ -13,10 +13,10 @@ else{
 }
 
 ?>
-
+  <h1>Panel de control</h1>
   <form action="account.php" method="POST">
-  <input type="hidden" name="logout" />
-  <button type="submit"class="btn">Cerrar sesión</button>
+    <input type="hidden" name="logout" />
+    <button type="submit"class="btn">Cerrar sesión</button>
   </form>
 
 <!-- footer -->

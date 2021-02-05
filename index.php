@@ -33,7 +33,7 @@ $query = "SELECT * FROM `Category`";
         $category_list = mysqli_fetch_all($query_response, MYSQLI_ASSOC);
 ?>
 
-    <!-- Feature categories -->
+    <!-- categories -->
     <div class="categories">
       <div class="small-container">
         <div class="row">
@@ -48,16 +48,16 @@ $query = "SELECT * FROM `Category`";
     </div>
 
 <?php
-$query = "SELECT * FROM `Product`";
+$query = "SELECT * FROM `Product` ORDER BY `Product`.`createdAt` DESC LIMIT 4";
         $query_response = mysqli_query($connection, $query);
-        $product_list = mysqli_fetch_all($query_response, MYSQLI_ASSOC);
+        $newer_products = mysqli_fetch_all($query_response, MYSQLI_ASSOC);
 ?>
 
     <!-- Newer products -->
     <div class="small-container">
       <h2 class="title">Productos nuevos</h2>
       <div class="row">
-<?php foreach($product_list as $product){ ?>
+<?php foreach($newer_products as $product){ ?>
         <div class="col-4">  
           <a href="<?php echo './single-product.php?id='.$product['id']; ?>">
           <img
@@ -72,17 +72,23 @@ $query = "SELECT * FROM `Product`";
       </div>
     </div>
 
-    <!-- Most watched products -->
+<?php
+$query = "SELECT * FROM `Product`";
+        $query_response = mysqli_query($connection, $query);
+        $product_list = mysqli_fetch_all($query_response, MYSQLI_ASSOC);
+?>
+
+    <!-- All products -->
     <div class="small-container">
-      <h2 class="title">Más vistos</h2>
+      <h2 class="title">Todos los productos</h2>
       <div class="row">
 <?php foreach($product_list as $product){ ?>
         <div class="col-4">
-        <a href="<?php echo './single-product.php?id='.$product['id']; ?>">
-          <img
-            src="<?php echo $product['image']; ?>"
-            alt="product-1"
-          />
+          <a href="<?php echo './single-product.php?id='.$product['id']; ?>">
+            <img
+              src="<?php echo $product['image']; ?>"
+              alt="product-1"
+            />
           </a>
           <h4><?php echo $product['name']; ?></h4>
           <p><?php echo $product['price']; ?>€</p>
